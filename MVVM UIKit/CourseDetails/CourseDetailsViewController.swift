@@ -15,15 +15,22 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet private weak var courseImage: UIImageView!
     @IBOutlet private weak var favoriteButton: UIButton!
     
-    var course: Course!
     var viewModel: CourseDetailsViewModelProtocol!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    @IBAction func toggleFavorite(_ sender: UIButton) {
+        viewModel.favoriteButtonPressed()
+    }
+
     private func setupUI() {
+        setStatusForFavoriteButton()
+        viewModel.viewModelDidChange = { [weak self] viewModel in
+            self?.setStatusForFavoriteButton()
+        }
         courseNameLabel.text = viewModel.courseName
         numberOfLessonsLabel.text = viewModel.numberOfLessons
         numberOfTestsLabel.text = viewModel.numberOfTests
@@ -31,8 +38,7 @@ class CourseDetailsViewController: UIViewController {
         courseImage.image = UIImage(data: imageData)
     }
     
-    
-    @IBAction func toggleFavorite(_ sender: UIButton) {
+    private func setStatusForFavoriteButton() {
+        favoriteButton.tintColor = viewModel.isFavorite ? .red : .gray
     }
-
 }

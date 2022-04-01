@@ -20,6 +20,7 @@
 		9CDFB6F427F72EC700AC49CF /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFB6F327F72EC700AC49CF /* ImageManager.swift */; };
 		9CDFB74127F73EEE00AC49CF /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFB74027F73EEE00AC49CF /* CourseListViewController.swift */; };
 		9CDFB74527F7407A00AC49CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDFB74427F7407A00AC49CF /* Main.storyboard */; };
+		9CDFB74727F7429F00AC49CF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFB74627F7429F00AC49CF /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		9CDFB6F627F72EDE00AC49CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDFB74027F73EEE00AC49CF /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		9CDFB74427F7407A00AC49CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9CDFB74627F7429F00AC49CF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				9CDFB6E427F724F900AC49CF /* NetworkManager.swift */,
 				9CDFB6F327F72EC700AC49CF /* ImageManager.swift */,
+				9CDFB74627F7429F00AC49CF /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CDFB6E527F724F900AC49CF /* NetworkManager.swift in Sources */,
+				9CDFB74727F7429F00AC49CF /* DataManager.swift in Sources */,
 				9CDFB6E327F723A400AC49CF /* CourseDetailsViewController.swift in Sources */,
 				9CDFB74127F73EEE00AC49CF /* CourseListViewController.swift in Sources */,
 				9CDFB6DD27F7201000AC49CF /* CourseDetailsViewModel.swift in Sources */,

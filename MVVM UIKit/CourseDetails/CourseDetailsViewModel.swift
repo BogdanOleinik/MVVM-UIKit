@@ -7,12 +7,15 @@
 
 import Foundation
 
-protocol CourseDetailsViewModelProtocol {
+protocol CourseDetailsViewModelProtocol: AnyObject {
     var courseName: String { get }
     var numberOfLessons: String { get }
     var numberOfTests: String { get }
     var imageData: Data? { get }
+    var isFavorite: Bool { get }
+    var viewModelDidChange: ((CourseDetailsViewModelProtocol) -> Void)? { get set }
     init(course: Course)
+    func favoriteButtonPressed()
 }
 
 class CourseDetailsViewModel: CourseDetailsViewModelProtocol {
@@ -33,9 +36,24 @@ class CourseDetailsViewModel: CourseDetailsViewModelProtocol {
         ImageManager.shared.fetchImageData(from: course.imageUrl)
     }
     
+    var viewModelDidChange: ((CourseDetailsViewModelProtocol) -> Void)?
+    
+    var isFavorite: Bool {
+        get {
+            DataManger.shared.getFavouriteStatus(for: course.name)
+        } set {
+            DataManger.shared.setFavouriteStatus(for: course.name, with: newValue)
+            viewModelDidChange?(self)
+        }
+    }
+    
     private let course: Course
     
     required init(course: Course) {
         self.course = course
+    }
+    
+    func favoriteButtonPressed() {
+        isFavorite.toggle()
     }
 }
